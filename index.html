@@ -13,20 +13,21 @@ box-sizing:border-box;
 }
 
 body{
-height:100vh;
-overflow:hidden;
-font-family:'Arial',sans-serif;
+min-height:100vh;
+overflow-x:hidden;
+font-family:Arial,sans-serif;
 background:linear-gradient(135deg,#ff9a9e,#fad0c4);
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .container{
+max-width:800px;
 z-index:10;
-padding:20px;
 }
 
 h1{
@@ -36,19 +37,33 @@ margin-bottom:10px;
 
 h2{
 font-size:1.5rem;
-margin-bottom:25px;
+margin-bottom:20px;
+}
+
+.cute-gif{
+width:260px;
+max-width:90%;
+border-radius:20px;
+margin:20px auto;
+display:block;
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
 }
 
 #countdown{
 font-size:2rem;
 font-weight:bold;
-margin:20px 0;
+margin:25px 0;
+background:rgba(255,255,255,0.15);
+padding:15px;
+border-radius:15px;
 }
 
 .message{
-max-width:700px;
 font-size:1.2rem;
 line-height:1.8;
+padding:20px;
+background:rgba(255,255,255,0.1);
+border-radius:20px;
 }
 
 .heart{
@@ -69,29 +84,67 @@ transform:translateY(-110vh);
 opacity:0;
 }
 }
+
+.footer{
+margin-top:25px;
+font-size:1.1rem;
+font-weight:bold;
+}
+
+@media(max-width:600px){
+h1{
+font-size:2.2rem;
+}
+#countdown{
+font-size:1.3rem;
+}
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
+
 <h1>❤️ Bubu Don ❤️</h1>
 
 <h2>From Dudu Badmash 💕</h2>
 
+<img
+src="https://media.tenor.com/0h5fD_2x4nUAAAAC/dudu-bubu-camping.gif"
+alt="Dudu and Bubu"
+class="cute-gif">
+
+<div class="footer">
+🐻 Dudu & Bubu Forever ❤️
+</div>
+
 <div id="countdown"></div>
 
 <div class="message">
-Every day with you feels special, but July 9th is my favorite because it's the day my beautiful Bubu Don came into this world. ❤️<br><br>
+My Dearest Bubu Don ❤️
 
-Thank you for filling my life with smiles, laughter, and endless happiness. I can't wait to celebrate your special day and make beautiful memories together. 💕
+<br><br>
+
+Every day with you is a beautiful blessing. Your smile brightens my world, your laughter fills my heart, and your love makes every moment magical.
+
+<br><br>
+
+As we count down to your special day, I want you to know how grateful I am to have you in my life.
+
+<br><br>
+
+I can't wait to celebrate your birthday and create even more beautiful memories together.
+
+<br><br>
+
+Love you forever 💕
 </div>
 
 </div>
 
 <script>
 
-// Countdown
 const birthday = new Date("July 9, 2026 00:00:00").getTime();
 
 setInterval(() => {
@@ -105,11 +158,13 @@ const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
 const seconds = Math.floor((distance%(1000*60))/1000);
 
 document.getElementById("countdown").innerHTML =
-`${days} Days ❤️ ${hours} Hours ❤️ ${minutes} Minutes ❤️ ${seconds} Seconds`;
+days + " Days ❤️ " +
+hours + " Hours ❤️ " +
+minutes + " Minutes ❤️ " +
+seconds + " Seconds";
 
 },1000);
 
-// Floating Hearts
 function createHeart(){
 const heart=document.createElement("div");
 heart.classList.add("heart");
