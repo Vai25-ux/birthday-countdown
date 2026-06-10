@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Countdown ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+h1{
+    font-size:3rem;
+}
+
+#countdown{
+    font-size:2rem;
+    margin:20px;
+}
+
+.message{
+    max-width:700px;
+    padding:20px;
+    font-size:1.2rem;
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Countdown to Your Birthday ❤️</h1>
+
+<div id="countdown"></div>
+
+<div class="message">
+Every moment brings me closer to celebrating the most amazing person in my life. ❤️
+</div>
+
+<script>
+let targetDate = new Date("July 9, 2026 00:00:00").getTime();
+
+setInterval(function(){
+
+let now = new Date().getTime();
+let distance = targetDate - now;
+
+let days = Math.floor(distance/(1000*60*60*24));
+let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days + " Days " +
+hours + " Hours " +
+minutes + " Minutes " +
+seconds + " Seconds";
+
+},1000);
+</script>
+
+</body>
+</html>
